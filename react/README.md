@@ -14,11 +14,11 @@ it reinforces the most important rules and overwrites some of them.
 ## Methods
 
 <a name="method--placement"></a><a name="1.1"></a>
-- [1.1](#method--placement) **Method Placement**: If the method dosen't use `this`, it can be a global function at the compilation unit.
+- [1.1](#method--placement) **Method placement**: if the method dosen't use `this`, it can be a global function at the compilation unit.
 
 
 <a name="method--purefunction"></a><a name="1.2"></a>
-- [1.2](#method--pure--function) **Method Declaration in Pure Functions**: Method declarations should outside pure functions.
+- [1.2](#method--pure--function) **Method declaration in pure functions**: method declarations should outside pure functions.
 
 > Why? Method's are created in every execution of the render.
 
@@ -74,7 +74,7 @@ handleChange(e) {
 ```
 
 <a name="method--child"></a><a name="1.2"></a>
-- [1.4](#child--method--nameing) **Child methods naming**: handlers got from props should be named `on`+`event`.
+- [1.4](#child--method--naming) **Child methods naming**: handlers got from props should be named `on`+`event`.
 
 ```jsx
 // bad
@@ -90,8 +90,8 @@ Comments.propTypes = {
 }
 ```
 
-<a name="method--render"></a><a name="1.2"></a>
-- [1.5](#method--render) **Method Render Return**: If react elements are returned the structure should be `render`+`rendered content`.
+<a name="render--method"></a><a name="1.2"></a>
+- [1.5](#render--method) **Render method naming**: If react elements are returned the structure should be `render`+`rendered content`.
 
 ```jsx
 // good
@@ -116,14 +116,14 @@ class UserList extends Component {
 
 ## Actions
 
-<a name="action--nameing"></a><a name="2.1"></a>
-- [2.1](#action--nameing) **Actions Naming**: Actions should be named (entity + verb infinitive + action past).
+<a name="action--naming"></a><a name="2.1"></a>
+- [2.1](#action--naming) **Actions naming**: actions should be named (entity + verb infinitive + action past).
 
 ```jsx
-ENTITIY_VERB_ACTION(past tense)
+ENTITY_VERB_ACTION(past tense)
 
 const USERS_FETCH_REQUESTED = 'USERS_FETCH_REQUESTED';
-const USERS_FETCH_SUCCESSED = 'USERS_FETCH_SUCCESSED';
+const USERS_FETCH_SUCCEEDED = 'USERS_FETCH_SUCCEEDED';
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -131,7 +131,7 @@ const USERS_FETCH_SUCCESSED = 'USERS_FETCH_SUCCESSED';
 ## Best Practices
 
 <a name="best-practices--fragment"></a><a name="3.1"></a>
-- [3.1](#best-practices--fragment) **Fragment Use**: Avoid useless `div` or `View` (react-native) as element container, use `Fragment` instead.
+- [3.1](#best-practices--fragment) **Fragment usage**: avoid useless `div` or `View` (react-native) as element container, use `Fragment` instead.
 
 ```jsx
 // bad
