@@ -10,6 +10,10 @@ it reinforces the most important rules and overwrites some of them.
 1. [Methods](#methods)
 1. [Actions](#actions)
 1. [Best Practices](#best-practices)
+    * Fragment usage [3.1](#best-practices--fragment)
+    * Deprecation of `will` componentse [3.2](#bestpractices--deprecations)
+    * Use PureComponent when be possible [3.3](#bestpractices--pureComponent)
+    * Avoid re-render with react.memo [3.4](#bestpractices--memo)
 
 ## Methods
 
@@ -173,6 +177,33 @@ More information about `Fragment`: https://reactjs.org/docs/fragments.html
 `componentWillMount` and `componentWillUpdate` are deprecated, `componentDidMount` and `componentDidUpdate` should be used now.
 
 Also `componentWillReceiveProps ` is replaced by a new function called `getDerivedStateFromProps`
+
+<a name="bestpractices--pureComponent"></a><a name="3.3"></a>
+- [3.3](#bestpractices--pureComponent) **Use PureComponent when be possible**:
+
+You should use `PureComponent` over `Component` because `PureComponent` handles the `shouldComponentUpdate` method for you.
+
+[documentation](https://reactjs.org/docs/react-api.html#reactpurecomponent)
+
+<a name="bestpractices--memo"></a><a name="3.4"></a>
+- [3.4](#bestpractices--memo) **Avoid re-render with react.memo**:
+Sometimes we have a function component and its props no change but the component re-render anyway, with `react.memo` we can avoid this.
+
+```jsx
+// bad
+const Example = ({title}) => <h2>{title}</h2>
+
+export default Example;
+```
+
+```jsx
+// good
+const Example = ({title}) => <h2>{title}</h2>
+
+export default react.memo(Example);
+```
+
+When using `react-redux`, `connect` acts like `react.memo`. In that case you don't need to wrap it in `React.memo()`
 
 **[⬆ back to top](#table-of-contents)**
 
